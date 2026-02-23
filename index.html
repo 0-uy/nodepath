@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NodePath Studio | Desarrollo Web, CRM y Software a Medida</title>
+<meta name="description" content="NodePath Studio crea sitios web profesionales, CRM y software a medida. Diseño estratégico, tecnología moderna y resultados reales para tu negocio.">
+<meta name="keywords" content="desarrollo web, CRM a medida, software personalizado, diseño web profesional, automatización empresarial">
+<meta name="author" content="NodePath Studio">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#00c864">
+<meta property="og:title" content="NodePath Studio | Smart Digital Solutions">
+<meta property="og:description" content="Desarrollo web, CRM, software a medida y creación de identidad de marca. Impulsamos empresas con tecnología y branding estratégico.">
+<meta property="og:image" content="https://nodepathstudio.com/assets/preview.png">
+<meta property="og:url" content="https://nodepathstudio.com/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://nodepathstudio.com/">
+<link rel="icon" type="image/png" href="assets/favicon-16x16.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "NodePath Studio",
+  "url": "https://nodepathstudio.com",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Uruguay"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Montevideo",
+    "addressCountry": "UY"
+  }
+}
+</script>
+</head>
+<body>
+
+<div id="cur"></div> <!-- puntero mouse -->
+<div id="cur-ring"></div>
+
+<div class="bg-grid"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+<div class="scanline"></div>
+
+<!-- Circuit SVG -->
+<svg class="circ" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;">
+  <path d="M0,150 L140,150 L140,95 L200,95 L200,55" stroke="rgba(0,255,122,.16)" stroke-width="1.5" fill="none"/>
+  <circle cx="200" cy="55" r="5" fill="rgba(0,255,122,.5)"/>
+  <rect x="194" y="49" width="12" height="12" fill="none" stroke="rgba(0,255,122,.28)" stroke-width="1" rx="1"/>
+  <path d="M0,310 L90,310 L90,258 L148,258" stroke="rgba(0,255,122,.08)" stroke-width="1" fill="none"/>
+  <circle cx="148" cy="258" r="3" fill="rgba(0,255,122,.22)"/>
+  <path d="M0,490 L60,490 L60,540" stroke="rgba(0,255,122,.06)" stroke-width="1" fill="none"/>
+  <path d="M0,730 L95,730 L95,792 L155,792" stroke="rgba(0,255,122,.09)" stroke-width="1" fill="none"/>
+  <path d="M1440,175 L1300,175 L1300,118 L1240,118 L1240,76" stroke="rgba(0,180,255,.16)" stroke-width="1.5" fill="none"/>
+  <circle cx="1240" cy="76" r="5" fill="rgba(0,180,255,.5)"/>
+  <rect x="1234" y="70" width="12" height="12" fill="none" stroke="rgba(0,180,255,.28)" stroke-width="1" rx="1"/>
+  <path d="M1440,355 L1350,355 L1350,298 L1292,298" stroke="rgba(0,180,255,.08)" stroke-width="1" fill="none"/>
+  <path d="M1440,520 L1370,520 L1370,568" stroke="rgba(0,180,255,.06)" stroke-width="1" fill="none"/>
+  <path d="M1440,745 L1340,745 L1340,808 L1280,808" stroke="rgba(0,180,255,.09)" stroke-width="1" fill="none"/>
+</svg>
+
+<!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+<nav id="nav">
+  <a href="#" class="nl">
+    <svg width="38" height="30" viewBox="0 0 110 90">
+      <defs>
+        <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#39FF14"/><stop offset="50%" stop-color="#20d4a8"/><stop offset="100%" stop-color="#00BFFF"/>
+        </linearGradient>
+      </defs>
+      <line x1="18" y1="16" x2="18" y2="74" stroke="#39FF14" stroke-width="4" stroke-linecap="round"/>
+      <line x1="18" y1="16" x2="92" y2="74" stroke="url(#lg1)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="92" y1="16" x2="92" y2="74" stroke="#00BFFF" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="18" cy="10" r="8" fill="none" stroke="#39FF14" stroke-width="3"/>
+      <circle cx="18" cy="80" r="8" fill="none" stroke="#39FF14" stroke-width="3"/>
+      <circle cx="92" cy="10" r="8" fill="none" stroke="#00BFFF" stroke-width="3"/>
+      <circle cx="92" cy="80" r="8" fill="none" stroke="#00BFFF" stroke-width="3"/>
+      <circle cx="55" cy="45" r="5" fill="none" stroke="#20d4a8" stroke-width="2.5"/>
+    </svg>
+    <div>
+      <div class="nl-name">Node<span>Path</span></div>
+      <span class="nl-sub">Smart Digital Solutions</span>
+    </div>
+  </a>
+  <ul class="nm" id="nm">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#por-que">Nosotros</a></li>
+    <li><a href="#contacto" class="cta-nav">Contacto →</a></li>
+  </ul>
+  <button class="ham" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero">
+  <div class="h-badge">
+    <span class="live-dot"></span>
+   No tener web es perder ventas
+  </div>
+
+  <div class="h-eyebrow">Smart Digital Solutions</div>
+
+
+  <h1 class="h-title">
+    Construimos la<br>
+    <span class="grad-text">tecnología</span><br>
+    que <span class="outline-text">escala</span> tu<br>
+    negocio.
+  </h1>
+
+  <p class="h-sub">
+    Desarrollo web, software a medida y automatizaciones.<br>
+    Soluciones que no solo se ven bien — que generan ventas.
+  </p>
+
+  <div class="h-btns">
+    <a href="#contacto" class="btn btn-p">💬 Hablemos de tu proyecto</a>
+    <a href="#portafolio" class="btn btn-s">Ver portafolio →</a>
+  </div>
+
+  <div class="h-stats">
+    <div>
+      <div class="stat-n grad-text" data-target="20" data-suffix="+">20+</div>
+      <div class="stat-l">Proyectos<br>entregados</div>
+    </div>
+    <div>
+      <div class="stat-n grad-text" data-target="48" data-suffix="hs">48hs</div>
+      <div class="stat-l">Propuesta<br>sin costo</div>
+    </div>
+    <div>
+      <div class="stat-n grad-text" data-target="100" data-suffix="%">100%</div>
+      <div class="stat-l">A medida<br>sin templates</div>
+    </div>
+    <div>
+      <div class="stat-n grad-text" data-target="3" data-suffix="×">3×</div>
+      <div class="stat-l">Más clientes<br>con web prof.</div>
+    </div>
+  </div>
+
+  <div class="scroll-ind">
+    <div class="scroll-bar"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ============================================================
+     MARQUEE
+     ============================================================ -->
+<div class="marquee-strip" style="position:relative;z-index:2;">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot"></span>Páginas Web Profesionales</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Landing Pages</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>E-commerce</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Software a Medida</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>CRM & Gestión</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Automatizaciones</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Diseño UI/UX</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>NodePath</span>
+    <!-- Repeat for seamless loop -->
+    <span class="marquee-item"><span class="marquee-dot"></span>Páginas Web Profesionales</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Landing Pages</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>E-commerce</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Software a Medida</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>CRM & Gestión</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Automatizaciones</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Diseño UI/UX</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>NodePath</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     SERVICIOS
+     ============================================================ -->
+
+<!-- ======= TICKER 3D ======= -->
+<div class="ticker-3d" style="position:relative;z-index:2;border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);">
+  <div class="ticker-3d-track">
+    <div class="ticker-3d-item"><span class="t3i-icon">🌐</span><span class="t3i-label">Páginas <span>Web</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">🚀</span><span class="t3i-label">Landing <span>Pages</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">🛒</span><span class="t3i-label">E-<span>commerce</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">⚙️</span><span class="t3i-label">Software <span>A Medida</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">🤖</span><span class="t3i-label">Auto-<span>matizaciones</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">📊</span><span class="t3i-label">CRM & <span>Dashboards</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">🎯</span><span class="t3i-label">SEO & <span>Performance</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">⚡</span><span class="t3i-label">Node<span>Path</span></span></div>
+    <!-- Repeat -->
+    <div class="ticker-3d-item"><span class="t3i-icon">🌐</span><span class="t3i-label">Páginas <span>Web</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">🚀</span><span class="t3i-label">Landing <span>Pages</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">🛒</span><span class="t3i-label">E-<span>commerce</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">⚙️</span><span class="t3i-label">Software <span>A Medida</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">🤖</span><span class="t3i-label">Auto-<span>matizaciones</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">📊</span><span class="t3i-label">CRM & <span>Dashboards</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">🎯</span><span class="t3i-label">SEO & <span>Performance</span></span></div>
+    <div class="ticker-3d-item"><span class="t3i-icon">⚡</span><span class="t3i-label">Node<span>Path</span></span></div>
+  </div>
+</div>
+
+
+<!-- ======= 3D MOCKUP SECTION ======= -->
+<section id="mockup3d-section">
+  <div class="mockup3d-header reveal">
+    <div class="s-lbl">Nuestro trabajo en acción</div>
+    <h2 class="s-title">Software que se ve<br><span class="grad-text">y se siente diferente.</span></h2>
+    <p style="font-family:'Space Mono',monospace;font-size:12.5px;color:rgba(255,255,255,0.38);line-height:1.85;margin-top:14px;">Cada pantalla es una solución real, construida para un cliente real.</p>
+  </div>
+
+  <div class="mockup3d-stage">
+    <!-- Circuit glow behind screens -->
+    <svg class="circuit-glow-svg" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="cg1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(0,255,122,0.4)"/>
+          <stop offset="100%" stop-color="rgba(0,255,122,0)"/>
+        </radialGradient>
+        <radialGradient id="cg2" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="rgba(0,221,255,0.35)"/>
+          <stop offset="100%" stop-color="rgba(0,221,255,0)"/>
+        </radialGradient>
+      </defs>
+      <!-- Circuit lines from center -->
+      <path class="draw-line" d="M600,500 L600,350 L600,250" stroke="rgba(0,255,122,0.25)" stroke-width="2" fill="none"/>
+      <path class="draw-line" d="M600,250 L450,200 L350,200 L280,150 L200,150" stroke="rgba(0,255,122,0.2)" stroke-width="1.5" fill="none" style="transition-delay:0.3s"/>
+      <path class="draw-line" d="M600,250 L750,200 L850,200 L920,150 L1000,150" stroke="rgba(0,221,255,0.2)" stroke-width="1.5" fill="none" style="transition-delay:0.5s"/>
+      <!-- Horizontal grid lines -->
+      <path class="draw-line" d="M100,350 L300,350 L400,300" stroke="rgba(0,255,122,0.1)" stroke-width="1" fill="none" style="transition-delay:0.7s"/>
+      <path class="draw-line" d="M1100,350 L900,350 L800,300" stroke="rgba(0,221,255,0.1)" stroke-width="1" fill="none" style="transition-delay:0.9s"/>
+      <!-- Glow nodes -->
+      <circle cx="200" cy="150" r="6" fill="rgba(0,255,122,0.6)"/>
+      <circle cx="200" cy="150" r="14" fill="none" stroke="rgba(0,255,122,0.2)" stroke-width="1"/>
+      <circle cx="1000" cy="150" r="6" fill="rgba(0,221,255,0.6)"/>
+      <circle cx="1000" cy="150" r="14" fill="none" stroke="rgba(0,221,255,0.2)" stroke-width="1"/>
+      <circle cx="600" cy="250" r="5" fill="rgba(0,255,122,0.5)"/>
+      <!-- Glow halos behind screens -->
+      <ellipse cx="250" cy="300" rx="160" ry="120" fill="url(#cg2)" opacity="0.25"/>
+      <ellipse cx="950" cy="300" rx="160" ry="120" fill="url(#cg2)" opacity="0.25"/>
+      <ellipse cx="600" cy="280" rx="220" ry="160" fill="url(#cg1)" opacity="0.2"/>
+    </svg>
+
+    <!-- Left screen -->
+    <div class="screen-3d screen-left">
+      <div class="screen-3d-bar">
+        <div class="s3d-dot s3d-d1"></div>
+        <div class="s3d-dot s3d-d2"></div>
+        <div class="s3d-dot s3d-d3"></div>
+        <div class="s3d-url">cannatech.app/miembros</div>
+      </div>
+      
+        <img src="assets/realstates.png" alt="Inmobiliaria 360"
+        class="screen-3d-img"/>
+    </div>
+
+    <!-- Main center screen -->
+    <div class="screen-3d screen-main">
+      <div class="screen-3d-bar">
+        <div class="s3d-dot s3d-d1"></div>
+        <div class="s3d-dot s3d-d2"></div>
+        <div class="s3d-dot s3d-d3"></div>
+        <div class="s3d-url">cannatech.app/funcionalidades</div>
+      </div>
+         <div class="screen-3d-content">
+        <img src="assets/crm agrofarmaindus.PNG" alt="CRM personalizado">
+         <div class="neon-divider"></div>
+       <img src="assets/crm erp.PNG" alt="CRM parte inferior">
+      </div>
+
+      <div class="screen-stand">
+        <div class="stand-neck"></div>
+        <div class="stand-base"></div>
+        <div class="stand-refl"></div>
+      </div>
+    </div>
+
+    <!-- Right screen -->
+    <div class="screen-3d screen-right" style="box-shadow:0 0 0 1.5px rgba(0,221,255,0.2),0 0 40px rgba(0,221,255,0.1),0 40px 80px rgba(0,0,0,0.8);">
+      <div class="screen-3d-bar" style="border-bottom-color:rgba(0,221,255,0.07);">
+        <div class="s3d-dot s3d-d1"></div>
+        <div class="s3d-dot s3d-d2"></div>
+        <div class="s3d-dot s3d-d3"></div>
+        <div class="s3d-url">comferre.com</div>
+      </div>
+      
+          <!-- Versión escritorio -->
+          <img src="assets/comferre.webp"
+          alt="web chocolates"
+          class="screen-3d-img desktop-only"/>
+
+          <!-- Versión móvil -->
+          <div class="screen-3d-content mobile-only">
+            <img src="assets/comferre.webp" alt="web chocolates tienda">
+            <div class="neon-divider"></div>
+            <img src="assets/nexus group.PNG" alt="landing web">
+          </div>
+    
+    </div>
+  </div>
+    <div class="carousel-dots">
+  <span class="dot active"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+</section>
+
+<!-- ======= COUNTER SECTION ======= -->
+<div class="counter-section">
+  <div class="counter-grid">
+    <div class="counter-item reveal">
+      <div class="ci-n grad-text" data-counter="20" data-suffix="+">0+</div>
+      <div class="ci-label">Proyectos<br>Entregados</div>
+    </div>
+    <div class="counter-item reveal d2">
+      <div class="ci-n" style="background:linear-gradient(90deg,#00ddff,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" data-counter="100" data-suffix="%">0%</div>
+      <div class="ci-label">Clientes<br>Satisfechos</div>
+    </div>
+    <div class="counter-item reveal d3">
+      <div class="ci-n" style="background:linear-gradient(90deg,#a855f7,#ff9a3c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" data-counter="48" data-suffix="hs">0hs</div>
+      <div class="ci-label">Propuesta<br>Sin Costo</div>
+    </div>
+    <div class="counter-item reveal d4">
+      <div class="ci-n" style="background:linear-gradient(90deg,#ff9a3c,#00ff7a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" data-counter="3" data-suffix="×">0×</div>
+      <div class="ci-label">Más Clientes<br>Con Web Prof.</div>
+    </div>
+  </div>
+</div>
+
+<section id="servicios">
+  <div class="srv-hdr">
+    <div class="reveal">
+      <div class="s-lbl">Lo que hacemos</div>
+      <h2 class="s-title">Servicios que<br><span class="grad-text">generan resultados.</span></h2>
+    </div>
+    <p class="srv-desc reveal d2">No vendemos templates ni soluciones genéricas. Cada proyecto es construido desde cero, pensado para tu negocio y tus objetivos reales.</p>
+  </div>
+
+  <div class="srv-grid">
+    <div class="srv-card reveal d1">
+      <div class="c-num">01 —</div>
+      <span class="c-icon">🌐</span>
+      <div class="c-title">Páginas Web Profesionales</div>
+      <p class="c-desc">Diseño moderno adaptado a tu marca, optimizado para Google. Tu web trabaja 24/7 como tu mejor vendedor.</p>
+      <div class="c-tags"><span class="c-tag">SEO</span><span class="c-tag">Responsive</span><span class="c-tag">Rápida</span></div>
+      <span class="c-arrow">↗</span>
+    </div>
+
+    <div class="srv-card reveal d2">
+      <div class="c-num">02 —</div>
+      <span class="c-icon">🚀</span>
+      <div class="c-title">Landing Pages de Alto Impacto</div>
+      <p class="c-desc">Diseñadas para convertir visitas en clientes. Copy estratégico, diseño que detiene el scroll y CTAs que convierten.</p>
+      <div class="c-tags"><span class="c-tag">Conversión</span><span class="c-tag">Analytics</span></div>
+      <span class="c-arrow">↗</span>
+    </div>
+
+    <div class="srv-card reveal d3">
+      <div class="c-num">03 —</div>
+      <span class="c-icon">🛒</span>
+      <div class="c-title">E-commerce & Tiendas Online</div>
+      <p class="c-desc">Tiendas que venden: catálogo inteligente, carrito optimizado, pagos integrados y gestión de pedidos completa.</p>
+      <div class="c-tags"><span class="c-tag">Pagos</span><span class="c-tag">Inventario</span><span class="c-tag">Pedidos</span></div>
+      <span class="c-arrow">↗</span>
+    </div>
+
+    <div class="srv-card reveal d4">
+      <div class="c-num">04 —</div>
+      <span class="c-icon">🤖</span>
+      <div class="c-title">Automatizaciones & Workflows</div>
+      <p class="c-desc">Eliminamos tareas manuales. Integramos sistemas, automatizamos procesos y hacemos que tu operación funcione sola.</p>
+      <div class="c-tags"><span class="c-tag">API</span><span class="c-tag">Integración</span><span class="c-tag">Flujos</span></div>
+      <span class="c-arrow">↗</span>
+    </div>
+
+    <div class="srv-card reveal d5">
+      <div class="c-num">05 —</div>
+      <span class="c-icon">📊</span>
+      <div class="c-title">Dashboards & Reportes</div>
+      <p class="c-desc">Visualizá tu negocio en tiempo real. Datos de ventas, costos, rendimiento y KPIs clave en un panel centralizado.</p>
+      <div class="c-tags"><span class="c-tag">Gráficos</span><span class="c-tag">Tiempo real</span><span class="c-tag">KPIs</span></div>
+      <span class="c-arrow">↗</span>
+    </div>
+
+       <div class="srv-card reveal d5">
+  <div class="c-num">01 —</div>
+  <span class="c-icon">🎨</span>
+  <div class="c-title">Identidad de Marca</div>
+  <p class="c-desc">Diseñamos la personalidad visual de tu negocio: logos, paleta de colores, tipografías y estilo gráfico coherente.</p>
+  <div class="c-tags">
+    <span class="c-tag">Logos</span>
+    <span class="c-tag">Colores</span>
+    <span class="c-tag">Tipografía</span>
+    <span class="c-tag">Branding</span>
+  </div>
+  <span class="c-arrow">↗</span>
+</div>
+
+           <!-- seccion identidad de marca -->
+ <div class="srv-card srv-wide reveal d1">
+  <div>
+    <div class="c-num">07 —</div>
+    <span class="c-icon">🎨</span>
+    <div class="c-title2">Identidad de Marca</div>
+    <p class="c-desc">
+      Creamos marcas que destacan y conectan. Desde logos hasta manuales completos, aplicamos creatividad y estrategia para que tu marca sea memorable.
+    </p>
+    <div class="c-tags">
+      <span class="c-tag">Logo</span>
+      <span class="c-tag">Colores</span>
+      <span class="c-tag">Tipografía</span>
+      <span class="c-tag">Manual</span>
+      <span class="c-tag">Aplicaciones</span>
+      <span class="c-tag">Creatividad</span>
+    </div>
+  </div>
+
+  <!-- Slider -->
+  <div class="slider-container">
+    <div class="slider-track">
+      <div class="slide"><img src="assets/img1.png" alt="Logo principal"></div>
+      <div class="slide"><img src="assets/img2.png" alt="Logo aplicado "></div>
+      <div class="slide"><img src="assets/img3.JPG" alt="branding"></div>
+      <div class="slide"><img src="assets/img4.JPG" alt="Mockup app/web"></div>
+      <div class="slide"><img src="assets/img5.png" alt="Merchandising"></div>
+      <div class="slide"><img src="assets/comferre2.png" alt="Material promocional"></div>
+    </div>
+    <button class="prev">‹</button>
+    <button class="next">›</button>
+  </div>
+
+  <span class="c-arrow">↗</span>
+</div>
+
+
+    <div class="srv-card srv-wide reveal d1">
+      <div>
+        <div class="c-num">06 —</div>
+        <span class="c-icon">⚙️</span>
+        <div class="c-title">Software & CRM a Medida</div>
+        <p class="c-desc">¿Ningún software del mercado resuelve tu problema? Lo construimos desde cero. CRMs, sistemas de gestión de miembros, plataformas operativas, facturación y más. Como CannaTech — gestión integral de cultivos con módulos personalizados.</p>
+        <div class="c-tags"><span class="c-tag">CRM</span><span class="c-tag">Dashboard</span><span class="c-tag">Gestión</span><span class="c-tag">Roles</span><span class="c-tag">Reportes</span><span class="c-tag">100% A Medida</span></div>
+      </div>
+      <div class="code-block">
+        <div class="cl"><span class="kw">const</span> proyecto = <span class="fn">await</span></div>
+        <div class="cl">  NodePath.<span class="fn">build</span>({</div>
+        <div class="cl">    tipo: <span class="st">'CRM'</span>,</div>
+        <div class="cl">    módulos: [</div>
+        <div class="cl">      <span class="st">'gestión'</span>,</div>
+        <div class="cl">      <span class="st">'reportes'</span>,</div>
+        <div class="cl">      <span class="st">'pagos'</span>,</div>
+        <div class="cl">      <span class="st">'auto'</span></div>
+        <div class="cl">    ],</div>
+        <div class="cl">  });</div>
+        <div class="cl" style="margin-top:10px;color:var(--g)">// ✓ Sistema online</div>
+      </div>
+      <span class="c-arrow">↗</span>
+    </div>
+  </div>
+</section>
+
+    <div class="my-slider">
+  <div class="my-slides">
+    <div class="my-slide active">
+      <img src="assets/webstiendas.png" alt="tiendas webs">
+    </div>
+    <div class="my-slide">
+      <img src="assets/crms erp.png" alt="crms perosnalizados">
+    </div>
+    <div class="my-slide">
+      <img src="assets/rentagile.png" alt="plataformas multisusuario">
+    </div>
+  </div>
+
+  <div class="my-navigation">
+    <span class="my-prev">&#10094;</span>
+    <span class="my-next">&#10095;</span>
+  </div>
+
+  <div class="my-dots">
+    <span class="my-dot active"></span>
+    <span class="my-dot"></span>
+    <span class="my-dot"></span>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     PROCESO
+     ============================================================ -->
+<section id="proceso">
+  <div class="pro-hdr reveal">
+    <div class="s-lbl">Cómo trabajamos</div>
+    <h2 class="s-title">Simple,<br><span class="grad-text">sin vueltas.</span></h2>
+    <p style="font-family:var(--mono);font-size:12.5px;color:var(--gray);line-height:1.85;margin-top:14px;">De la idea al producto final en pasos claros, con comunicación directa y sin sorpresas.</p>
+  </div>
+  <div class="pro-steps">
+    <div class="pro-step reveal d1">
+      <div class="pro-num">01</div>
+      <div class="pro-step-title">Consulta Gratis</div>
+      <p class="pro-step-desc">Nos contás tu idea. Analizamos tu negocio y definimos la mejor solución digital para tus objetivos reales.</p>
+    </div>
+    <div class="pro-step reveal d2">
+      <div class="pro-num">02</div>
+      <div class="pro-step-title">Propuesta en menos de 48hs</div>
+      <p class="pro-step-desc">Propuesta detallada con alcance, timeline y presupuesto claro. Sin letra chica, sin costos ocultos.</p>
+    </div>
+    <div class="pro-step reveal d3">
+      <div class="pro-num">03</div>
+      <div class="pro-step-title">Desarrollo Ágil</div>
+      <p class="pro-step-desc">Construimos con revisiones periódicas. Ves el progreso en tiempo real y das feedback en cada etapa.</p>
+    </div>
+    <div class="pro-step reveal d4">
+      <div class="pro-num">04</div>
+      <div class="pro-step-title">Lanzamiento & Soporte</div>
+      <p class="pro-step-desc">Lanzamos tu proyecto y te acompañamos post-lanzamiento. Tu éxito es nuestra reputación.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PORTAFOLIO
+     ============================================================ -->
+<section id="portafolio">
+  <div class="port-hdr">
+    <div class="reveal">
+      <div class="s-lbl">Portafolio</div>
+      <h2 class="s-title">Proyectos que<br><span class="grad-text">hablan solos.</span></h2>
+    </div>
+    <a href="#contacto" class="port-all reveal d2">Ver todos →</a>
+  </div>
+
+  <div class="port-grid">
+
+
+<!-- ============================================================
+     NUEVO PROYECTO 1 — Landing Inmobiliaria
+     ============================================================ -->
+<div class="pi reveal d2">
+  <div class="pi-browser">
+    <div class="bd"></div><div class="bd"></div><div class="bd"></div>
+    <div class="pi-url">inmobiliaria360 web</div>
+  </div>
+  <div class="pi-screen">
+    <img src="assets/realstates.png" alt="Inmobiliaria 360"
+         style="width:100%;object-fit:cover;object-position:top;"/>
+    <div class="pi-screen-ov"></div><div class="pi-rim"></div>
+  </div>
+  <div class="pi-info">
+    <h3>Inmobiliaria 360 — Landing de Ventas</h3>
+    <p>Landing optimizada para captación de leads, integración con WhatsApp y formularios automáticos.</p>
+    <div class="pi-tags">
+      <span class="pt ptw">Landing Page</span>
+      <span class="pt ptg">Leads</span>
+      <span class="pt ptb">Automatización</span>
+      <span class="pt ptw">Responsive</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NUEVO PROYECTO 2 — Clínica Estética
+     ============================================================ -->
+<div class="pi reveal d3">
+  <div class="pi-browser">
+    <div class="bd"></div><div class="bd"></div><div class="bd"></div>
+    <div class="pi-url">clinicabellezza web</div>
+  </div>
+  <div class="pi-screen">
+    <img src="assets/clinica.png" alt="Clínica Bellezza"
+         style="width:100%;object-fit:cover;object-position:top;"/>
+    <div class="pi-screen-ov"></div><div class="pi-rim"></div>
+  </div>
+  <div class="pi-info">
+    <h3>Clínica Bellezza — Sitio Institucional</h3>
+    <p>Web corporativa con home informativo, catálogo de servicios y optimización SEO local.</p>
+    <div class="pi-tags">
+      <span class="pt ptw">Web Corporativa</span>
+      <span class="pt ptg">SEO</span>
+      <span class="pt ptb">Turnos Online</span>
+      <span class="pt ptw">UI/UX</span>
+    </div>
+  </div>
+</div>
+
+
+      <div class="pi reveal d2">
+  <div class="pi-browser">
+    <div class="bd"></div>
+    <div class="bd"></div>
+    <div class="bd"></div>
+    <div class="pi-url">starhubcrm.django/dashboard</div>
+  </div>
+
+  <div class="pi-screen">
+    <img 
+      src="/assets/crmStarhub.png"
+      alt="StarHub CRM Dashboard con KPIs y gráficos comerciales"
+      loading="lazy"
+      width="800"
+      height="500"
+    />        
+    <div class="pi-screen-ov"></div>
+    <div class="pi-rim"></div>
+  </div>
+
+  <div class="pi-info">
+    <h3>StarHub CRM — Sistema de Gestión Comercial</h3>
+    <p>
+      Plataforma CRM para seguimiento de leads, gestión de clientes,
+      control de oportunidades de venta y visualización de rendimiento
+      comercial mediante paneles y gráficos interactivos.
+    </p>
+
+    <div class="pi-tags">
+      <span class="pt ptg">CRM</span>
+      <span class="pt ptb">Gestión Comercial</span>
+      <span class="pt ptw">Panel de Control</span>
+      <span class="pt ptd">Gráficos</span>
+      <span class="pt pta">Ventas</span>
+    </div>
+  </div>
+</div>
+    <!-- Comferre -->
+  <div class="pi reveal d2">
+  <div class="pi-browser">
+    <div class="bd"></div>
+    <div class="bd"></div>
+    <div class="bd"></div>
+    <div class="pi-url">comferre Ecommerce </div>
+  </div>
+
+  <div class="pi-screen">
+    <img 
+      src="/assets/comferre.webp"
+      alt="E-commerce premium con página de lanzamiento y reserva"
+      loading="lazy"
+      width="800"
+      height="500"
+    />        
+    <div class="pi-screen-ov"></div>
+    <div class="pi-rim"></div>
+  </div>
+
+  <div class="pi-info">
+    <h3>Comferre E-commerce & Lanzamiento Exclusivo</h3>
+    <p>
+     Sitio web premium con home dinámico,
+      página de compra exclusiva y reserva para lanzamiento de colección,
+       optimizado con SEO técnico e integración de Google Tag Manager
+       para análisis de conversiones.
+    </p>
+
+    <div class="pi-tags">
+      <span class="pt ptg">E-commerce</span>
+      <span class="pt ptw">Landing de Lanzamiento</span>
+      <span class="pt ptd">Reserva Online</span>
+      <span class="pt pta">SEO Optimizado</span>
+      <span class="pt ptb">Google Tag Manager</span>
+    </div>
+  </div>
+</div>
+
+    <div class="pi reveal d3">
+  <div class="pi-browser">
+    <div class="bd"></div>
+    <div class="bd"></div>
+    <div class="bd"></div>
+    <div class="pi-url">Pasteleria Ecommerce</div>
+  </div>
+
+  <div class="pi-screen">
+    <img 
+      src="/assets/pasteleria.webp"
+      alt="Tienda online de pastelería con catálogo y carrito"
+      loading="lazy"
+      width="800"
+      height="500"
+    />
+    <div class="pi-screen-ov"></div>
+    <div class="pi-rim"></div>
+  </div>
+
+  <div class="pi-info">
+    <h3> Pastelería Saludable E-commerce Completo</h3>
+    <p>
+      Sitio web corporativo, sección formulario de contacto y mapa integrado. 
+      Incluye tienda online con más de 125 productos organizados por categorías, 
+      sistema de filtrado, carrito de compras, formulario de datos del cliente y 
+      envío automático del pedido detallado redirigido al WhatsApp de la empresa.
+    </p>
+
+    <div class="pi-tags">
+      <span class="pt ptg">E-commerce</span>
+      <span class="pt ptw">+125 Productos</span>
+      <span class="pt ptd">Carrito de Compras</span>
+      <span class="pt pta">Filtro por Categoría</span>
+      <span class="pt ptb">Integración WhatsApp</span>
+    </div>
+  </div>
+
+    </div>
+
+    <!-- CannaTech -->
+    <div class="pi reveal d2">
+      <div class="pi-browser">
+        <div class="bd"></div><div class="bd"></div><div class="bd"></div>
+        <div class="pi-url">Cannatech CRM ERP django</div>
+      </div>
+      <div class="pi-screen">
+        <img 
+            src="/assets/crm erp.PNG"
+            alt="crm personalizado"
+            loading="lazy"
+            width="800"
+            height="500"
+                      />
+        
+        <div class="pi-screen-ov"></div><div class="pi-rim"></div>
+      </div>
+      <div class="pi-info">
+        <h3>Cannatech CRM — Gestión de Cultivos y Laboratorio</h3>
+  <p>CRM especializado para la industria cannábica: registro de variedades, análisis de muestras, recomendaciones de cultivo y reportes en PDF.</p>
+  <div class="pi-tags">
+    <span class="pt ptg">CRM</span>
+    <span class="pt ptb">Software a Medida</span>
+    <span class="pt ptw">Análisis de Laboratorio</span>
+    <span class="pt ptw">Gestion de Clientes, Miembros, Cultivos, Pedidos, Pagos</span>
+
+    <span class="pt ptw">Gestión de Cultivos</span>
+          
+        </div>
+      </div>
+    </div>
+
+
+        <div class="pi reveal d3">
+        <div class="pi-browser">
+          <div class="bd"></div><div class="bd"></div><div class="bd"></div>
+          <div class="pi-url">API de Alquiler de Auto nodejs</div>
+        </div>
+
+        <div class="pi-screen">
+          <img 
+            src="/assets/rent-agile.jpg"
+            alt="Plataforma multiusuario de alquiler de autos"
+            loading="lazy"
+            width="800"
+            height="500"
+          />
+          <div class="pi-screen-ov"></div>
+          <div class="pi-rim"></div>
+        </div>
+
+        <div class="pi-info">
+          <h3>Marketplace de Alquiler de Autos</h3>
+          <p>
+            Plataforma multiusuario donde propietarios publican y gestionan sus vehículos,
+            los usuarios reservan online, se comunican mediante mensajería interna
+            y califican cada experiencia de alquiler.
+          </p>
+
+          <div class="pi-tags">
+            <span class="pt ptg">Multiusuario</span>
+            <span class="pt ptw">Reservas</span>
+            <span class="pt ptd">Mensajería Interna</span>
+            <span class="pt pta">Calificaciones</span>
+            <span class="pt ptb">Panel de Gestión</span>
+          </div>
+        </div>
+      </div>
+
+     
+
+        <!-- CRM Veterinario -->
+<div class="pi reveal d1">
+  <div class="pi-browser">
+    <div class="bd"></div>
+    <div class="bd"></div>
+    <div class="bd"></div>
+    <div class="pi-url">crmvet.app</div>
+  </div>
+
+  <div class="pi-screen">
+    <img 
+      src="/assets/crmvet.PNG"
+      alt="CRM veterinario con gestión clínica"
+      loading="lazy"
+      width="800"
+      height="500"
+    />
+    <div class="pi-screen-ov"></div>
+    <div class="pi-rim"></div>
+  </div>
+
+  <div class="pi-info">
+    <h3>CRM de Gestión Veterinaria</h3>
+    <p>
+      Sistema integral para clínicas veterinarias con gestión de pacientes,
+      agenda de citas, historial médico, inventario y métricas en tiempo real.
+    </p>
+
+    <div class="pi-tags">
+      <span class="pt ptg">CRM Clínico</span>
+      <span class="pt ptw">Agenda</span>
+      <span class="pt ptd">Historial Médico</span>
+      <span class="pt pta">Inventario</span>
+      <span class="pt ptb">Dashboard</span>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="pi reveal d3">
+  <div class="pi-browser">
+    <div class="bd"></div><div class="bd"></div><div class="bd"></div>
+    <div class="pi-url">capitalgrowth Landing</div>
+  </div>
+
+  <div class="pi-screen">
+    <img 
+      src="/assets/nexus group.PNG"
+      alt="Landing de inversiones con formulario y FAQ"
+      loading="lazy"
+      width="800"
+      height="500"
+    />
+    <div class="pi-screen-ov"></div>
+    <div class="pi-rim"></div>
+  </div>
+
+  <div class="pi-info">
+    <h3>Landing Financiera de Inversiones</h3>
+    <p>
+      Sitio web corporativo desarrollado en HTML, CSS y JavaScript,
+      con secciones informativas, preguntas frecuentes dinámicas
+      y formulario de contacto para captación de potenciales inversores.
+    </p>
+
+    <div class="pi-tags">
+      <span class="pt ptg">HTML / CSS / JS</span>
+      <span class="pt ptw">Formulario</span>
+      <span class="pt ptd">FAQ Interactivo</span>
+      <span class="pt pta">Multipágina</span>
+    </div>
+  </div>
+</div>
+
+</div> 
+  
+</section>
+
+<!-- ============================================================
+     POR QUÉ NODEPATH
+     ============================================================ -->
+<section id="por-que">
+  <div class="why-grid">
+    <div class="reveal">
+      <div class="s-lbl">Por qué nosotros</div>
+      <h2 class="s-title">No somos<br>una agencia más.<br><span class="grad-text">Somos tu equipo.</span></h2>
+      <p class="why-s-desc">Comunicación directa con quien construye tu proyecto. Código limpio, resultados medibles. Sin intermediarios, sin excusas.</p>
+      <div style="margin-top:36px;">
+        <div class="why-big-n">100%</div>
+        <div class="why-big-l">de nuestros proyectos se entregan<br>con soporte post-lanzamiento incluido.<br>Tu éxito es nuestra reputación.</div>
+      </div>
+    </div>
+    <div class="why-items">
+      <div class="wi reveal d1">
+        <div class="wi-icon">⚡</div>
+        <div class="wi-text">
+          <h4>Entrega rápida, sin vueltas</h4>
+          <p>Propuesta en 48hs, desarrollo ágil, lanzamiento en tiempo récord. Respetamos tus plazos porque tu tiempo vale.</p>
+        </div>
+      </div>
+      <div class="wi reveal d2">
+        <div class="wi-icon">🎯</div>
+        <div class="wi-text">
+          <h4>Orientado a resultados reales</h4>
+          <p>Cada decisión de diseño y desarrollo está pensada para tus objetivos. No hacemos webs bonitas que no convierten.</p>
+        </div>
+      </div>
+      <div class="wi reveal d3">
+        <div class="wi-icon">🔒</div>
+        <div class="wi-text">
+          <h4>100% a medida, sin templates</h4>
+          <p>Tu negocio es único, tu solución también. Construimos desde cero para que encaje perfecto con tu operación.</p>
+        </div>
+      </div>
+      <div class="wi reveal d4">
+        <div class="wi-icon">🤝</div>
+        <div class="wi-text">
+          <h4>Comunicación directa y transparente</h4>
+          <p>Hablás con quien construye tu proyecto. Reportes constantes, revisiones periódicas, cero sorpresas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA / CONTACTO
+     ============================================================ -->
+<section id="contacto">
+  <div class="cta-box reveal">
+    <h2>Tu competencia ya está<br>online. <span class="grad-text">¿Y vos?</span></h2>
+    <p>Cada día sin presencia digital es dinero que se va a otro lado.<br>Hablemos hoy — propuesta sin costo en menos de 48 horas.</p>
+
+    <div class="cta-flow">
+      <div class="cf-step">
+        <div class="cf-num">1</div>
+        <div class="cf-lbl">Completá<br>el formulario</div>
+      </div>
+      <div class="cf-arr">→</div>
+      <div class="cf-step">
+        <div class="cf-num">2</div>
+        <div class="cf-lbl">Propuesta<br>gratis en 48hs</div>
+      </div>
+      <div class="cf-arr">→</div>
+      <div class="cf-step">
+        <div class="cf-num">3</div>
+        <div class="cf-lbl">Tu proyecto<br>online</div>
+      </div>
+    </div>
+
+   <form class="cta-form" id="cform">
+  <input type="text" name="name" placeholder="Tu nombre *" required/>
+  <input type="email" name="email" placeholder="Email *" required/>
+  <input type="tel" name="phone" placeholder="WhatsApp / Teléfono" class="f-full"/>
+  
+  <select name="service" class="f-full" required>
+    <option value="" disabled selected>¿Qué necesitás? *</option>
+    <option>Página Web Profesional</option>
+    <option>Landing Page</option>
+    <option>E-commerce / Tienda Online</option>
+    <option>Software / CRM a Medida</option>
+    <option>Automatizaciones</option>
+    <option>Dashboard / Reportes</option>
+    <option>Otro</option>
+  </select>
+
+  <textarea name="message" class="f-full" placeholder="Contanos tu proyecto o problema..."></textarea>
+
+  <button type="submit" class="f-submit" id="fsub">
+    🚀 Quiero mi propuesta gratuita
+  </button>
+</form>
+
+    <p class="cta-note">Sin compromiso · Respuesta en menos de 48 horas · 100% gratis</p>
+  </div>
+</section>
+
+
+
+<button id="myBtn" aria-label="Volver arriba">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+    <path d="M6 15L12 9L18 15" 
+          stroke="white" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  (function(){
+    emailjs.init("aYDXElqGzZ3kwdaGz");
+  })();
+</script>
+
+<script src="js/scroll.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/slider.js"></script>
+<script src="js/slider2.js"></script>
+<script src="js/dots.js"></script>
+<script src="js/email.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/scripts2.js"></script>
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <a href="#" class="nl" style="text-decoration:none;">
+    <svg width="34" height="27" viewBox="0 0 110 90">
+      <defs><linearGradient id="flg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#39FF14"/><stop offset="50%" stop-color="#20d4a8"/><stop offset="100%" stop-color="#00BFFF"/>
+      </linearGradient></defs>
+      <line x1="18" y1="16" x2="18" y2="74" stroke="#39FF14" stroke-width="4" stroke-linecap="round"/>
+      <line x1="18" y1="16" x2="92" y2="74" stroke="url(#flg)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="92" y1="16" x2="92" y2="74" stroke="#00BFFF" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="18" cy="10" r="8" fill="none" stroke="#39FF14" stroke-width="3"/>
+      <circle cx="18" cy="80" r="8" fill="none" stroke="#39FF14" stroke-width="3"/>
+      <circle cx="92" cy="10" r="8" fill="none" stroke="#00BFFF" stroke-width="3"/>
+      <circle cx="92" cy="80" r="8" fill="none" stroke="#00BFFF" stroke-width="3"/>
+      <circle cx="55" cy="45" r="5" fill="none" stroke="#20d4a8" stroke-width="2.5"/>
+    </svg>
+    <div>
+      <div class="nl-name">Node<span>Path</span></div>
+      <span class="nl-sub">Smart Digital Solutions</span>
+    </div>
+  </a>
+  <ul class="foot-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#por-que">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+    <div class="foot-social">
+    <a href="https://www.instagram.com/nodepath/" class="soc" title="Instagram">📸</a>
+   
+  </div>
+
+  <div class="foot-seo">
+    Desarrollo web, CRM y software a medida para empresas en Uruguay,
+    Argentina y España. Creamos soluciones digitales modernas,
+    automatizaciones y plataformas que impulsan negocios.
+  </div>
+
+  <div class="foot-copy">© 2025 NodePath — Smart Digital Solutions</div>
+</footer>
+
+</body>
+</html>
