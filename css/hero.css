@@ -1,0 +1,270 @@
+/* ============================================================
+   HERO.CSS — NodePath Hero Section
+   ============================================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg:    #050a08;
+  --green: #00ff88;
+  --cyan:  #00e5cc;
+  --white: #f0f4f2;
+  --muted: #4a6358;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Syne', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── CANVAS ── */
+#particles-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── HERO SECTION ── */
+#hero {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px 100px;
+}
+
+/* ── BADGE ── */
+.h-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  background: rgba(0, 255, 136, 0.06);
+  border: 1px solid rgba(0, 255, 136, 0.18);
+  padding: 8px 16px;
+  margin-bottom: 32px;
+  animation: fadeUp 0.7s ease both;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+  display: block;
+  box-shadow: 0 0 8px var(--green);
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+/* ── EYEBROW ── */
+.h-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+
+/* ── TITLE ── */
+.h-title {
+  font-size: clamp(52px, 8vw, 108px);
+  font-weight: 600;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  margin-bottom: 36px;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+
+/* Gradient "tecnología" */
+.grad-text {
+  background: linear-gradient(135deg, var(--green) 0%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 40px rgba(0, 255, 136, 0.35));
+}
+
+/* Outline + reveal "escala" */
+.outline-text {
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.18);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  position: relative;
+}
+.outline-text::after {
+  content: 'escala';
+  position: absolute;
+  left: 0;
+  -webkit-text-stroke: 0;
+  -webkit-text-fill-color: var(--cyan);
+  color: var(--cyan);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.8s cubic-bezier(0.16, 1, 0.3, 1) 1s;
+}
+.outline-text.revealed::after {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* ── SUBTITLE ── */
+.h-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(240, 244, 242, 0.45);
+  max-width: 520px;
+  margin: 0 auto 48px;
+  animation: fadeUp 0.8s 0.35s ease both;
+}
+
+/* ── BUTTONS ── */
+.h-btns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.5s ease both;
+}
+
+.btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 16px 28px;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Primary */
+.btn-p {
+  background: var(--green);
+  color: var(--bg);
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+}
+.btn-p::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cyan);
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+}
+.btn-p:hover::before { transform: translateX(0); }
+.btn-p:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 255, 136, 0.25);
+}
+
+.btn-p {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-p span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn.btn-p {
+  color: #fff;
+  background: #00c864;
+  transition: all 0.3s ease;
+}
+
+.btn.btn-p:hover {
+  color: #000;
+}
+
+/* Secondary */
+.btn-s {
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.btn-s:hover {
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ── SCROLL HINT ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  animation: fadeUp 1s 1s ease both;
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--green), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .h-title { font-size: clamp(40px, 12vw, 64px); }
+  #hero { padding: 100px 20px 80px; }
+}
