@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planes Web | NodePath</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/plan.css">
+</head>
+<body>
+
+<!-- FONDO -->
+<div class="bg-animated">
+  <canvas id="particles"></canvas>
+  <div class="orb3"></div>
+  <div class="bg-grid"></div>
+</div>
+
+<!-- NAV -->
+<header>
+  <nav id="nav">
+    <a href="index.html" class="nl">
+      <svg width="38" height="30" viewBox="0 0 110 90">
+        <defs>
+          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#39FF14"/>
+            <stop offset="50%" stop-color="#20d4a8"/>
+            <stop offset="100%" stop-color="#00BFFF"/>
+          </linearGradient>
+        </defs>
+        <line x1="18" y1="16" x2="18" y2="74" stroke="#39FF14" stroke-width="4"/>
+        <line x1="18" y1="16" x2="92" y2="74" stroke="url(#lg1)" stroke-width="4"/>
+        <line x1="92" y1="16" x2="92" y2="74" stroke="#00BFFF" stroke-width="4"/>
+        <circle cx="18" cy="10" r="8" fill="none" stroke="#39FF14" stroke-width="3"/>
+        <circle cx="18" cy="80" r="8" fill="none" stroke="#39FF14" stroke-width="3"/>
+        <circle cx="92" cy="10" r="8" fill="none" stroke="#00BFFF" stroke-width="3"/>
+        <circle cx="92" cy="80" r="8" fill="none" stroke="#00BFFF" stroke-width="3"/>
+        <circle cx="55" cy="45" r="5" fill="none" stroke="#20d4a8" stroke-width="2.5"/>
+      </svg>
+      <div>
+        <div class="nl-name">Node<span>Path</span></div>
+        <span class="nl-sub">Smart Digital Solutions</span>
+      </div>
+    </a>
+    <ul class="nm" id="nm">
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="index.html#proceso">Proceso</a></li>
+      <li><a href="index.html#portafolio">Portafolio</a></li>
+      <li><a href="index.html#por-que">Nosotros</a></li>
+      <li><a href="index.html#contacto" class="cta-nav">Contacto →</a></li>
+    </ul>
+    <button class="ham" id="ham" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-tag">// Soluciones Web</span>
+  <h1>Planes <span class="grad">estructurados para crecer</span></h1>
+  <p>Todos los planes incluyen hosting profesional y dominio sin costo el primer año.</p>
+  <div class="hero-line"></div>
+</section>
+
+<!-- STATS -->
+<section class="stats-strip">
+  <div class="stat-item reveal-item" data-delay="0">
+    <div class="stat-top"><span class="stat-num" data-target="47">0</span><span class="stat-sym">+</span></div>
+    <span class="stat-label">Proyectos entregados</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item reveal-item" data-delay="1">
+    <div class="stat-top"><span class="stat-num" data-target="98">0</span><span class="stat-sym">%</span></div>
+    <span class="stat-label">Clientes satisfechos</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item reveal-item" data-delay="2">
+    <div class="stat-top"><span class="stat-num" data-target="3">0</span><span class="stat-sym">x</span></div>
+    <span class="stat-label">Más conversiones promedio</span>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat-item reveal-item" data-delay="3">
+    <div class="stat-top"><span class="stat-num" data-target="172">0</span><span class="stat-sym">h</span></div>
+    <span class="stat-label">Promedio entregas <br> <small>planes basicos</small></span>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section class="planes">
+
+  <div class="card" data-delay="0">
+    <div class="shimmer"></div>
+    <div class="title">Landing Estratégica</div>
+    <div class="price">USD 190 – 290</div>
+    <div class="subtitle">Ideal para campañas o validación rápida.</div>
+    <hr class="sep">
+    <ul class="features">
+      <li><span class="ico">✓</span> Hosting incluido</li>
+      <li><span class="ico">✓</span> Dominio incluido el primer año</li>
+      <li><span class="ico">✓</span> Diseño enfocado en conversión</li>
+      <li><span class="ico">✓</span> SEO técnico inicial</li>
+      <li><span class="ico">✓</span> Optimización de velocidad</li>
+      <li><span class="ico">✓</span> Responsive profesional</li>
+    </ul>
+    <a href="index.html#contacto" class="btn">Consultar</a>
+  </div>
+
+  <div class="card popular" data-delay="1">
+    <div class="shimmer"></div>
+    <div class="badge">★ Más elegido</div>
+    <div class="title">Web Multipágina</div>
+    <div class="price">USD 350 – 520</div>
+    <div class="subtitle">Presencia empresarial sólida.</div>
+    <hr class="sep">
+    <ul class="features">
+      <li><span class="ico">✓</span> Hosting incluido</li>
+      <li><span class="ico">✓</span> Dominio incluido el primer año</li>
+      <li><span class="ico">✓</span> Hasta 5 secciones estructuradas</li>
+      <li><span class="ico">✓</span> SEO optimizado</li>
+      <li><span class="ico">✓</span> Dirección de arte en imágenes</li>
+      <li><span class="ico">✓</span> Optimización para conversión</li>
+    </ul>
+    <a href="index.html#contacto" class="btn">Consultar</a>
+  </div>
+
+  <div class="card" data-delay="2">
+    <div class="shimmer"></div>
+    <div class="title">Web + Identidad de Marca</div>
+    <div class="price">USD 620 – 890</div>
+    <div class="subtitle">Coherencia visual completa.</div>
+    <hr class="sep">
+    <ul class="features">
+      <li><span class="ico">✓</span> Hosting incluido</li>
+      <li><span class="ico">✓</span> Dominio incluido el primer año</li>
+      <li><span class="ico">✓</span> Diseño de logo profesional</li>
+      <li><span class="ico">✓</span> Paleta y tipografías</li>
+      <li><span class="ico">✓</span> Manual visual básico</li>
+      <li><span class="ico">✓</span> Web multipágina incluida</li>
+    </ul>
+    <a href="index.html#contacto" class="btn">Consultar</a>
+  </div>
+
+  <div class="card" data-delay="3">
+    <div class="shimmer"></div>
+    <div class="title">Mini Tienda con Carrito</div>
+    <div class="price">USD 450 – 650</div>
+    <div class="subtitle">Venta organizada sin pasarela.</div>
+    <hr class="sep">
+    <ul class="features">
+      <li><span class="ico">✓</span> Hosting incluido</li>
+      <li><span class="ico">✓</span> Dominio incluido el primer año</li>
+      <li><span class="ico">✓</span> Hasta 20 productos</li>
+      <li><span class="ico">✓</span> Carrito funcional</li>
+      <li><span class="ico">✓</span> Envío automático a WhatsApp</li>
+      <li><span class="ico">✓</span> Estructura escalable</li>
+    </ul>
+    <a href="index.html#contacto" class="btn">Consultar</a>
+  </div>
+
+  <!-- Catálogo -->
+  <div class="card" data-delay="4">
+    <div class="shimmer"></div>
+    <div class="title">Catálogo Online</div>
+    <div class="price">USD 650 – 950</div>
+    <div class="subtitle">Mostrá tus productos de forma profesional.</div>
+    <hr class="sep">
+    <ul class="features">
+      <li><span class="ico">✓</span> Hosting incluido</li>
+      <li><span class="ico">✓</span> Dominio incluido el primer año</li>
+      <li><span class="ico">✓</span> Hasta 30 productos</li>
+      <li><span class="ico">✓</span> Organización por categorías</li>
+      <li><span class="ico">✓</span> Ficha individual por producto</li>
+      <li><span class="ico">✓</span> Botón de consulta directa</li>
+    </ul>
+    <a href="index.html#contacto" class="btn">Consultar</a>
+  </div>
+
+  <!-- Plan premium -->
+  <div class="card" data-delay="5">
+    <div class="shimmer"></div>
+    <div class="badge" style="background:linear-gradient(90deg,#7c4dff,#00e0ff)">⚡ Full Digital</div>
+    <div class="title">Presencia Digital 360°</div>
+    <div class="price">USD 1.200 – 1.800</div>
+    <div class="subtitle">Solución completa para escalar tu negocio.</div>
+    <hr class="sep">
+    <ul class="features">
+      <li><span class="ico">✓</span> Hosting + dominio incluido</li>
+      <li><span class="ico">✓</span> Web multipágina + identidad de marca</li>
+      <li><span class="ico">✓</span> Catálogo o tienda integrada</li>
+      <li><span class="ico">✓</span> SEO avanzado on-page</li>
+      <li><span class="ico">✓</span> Integración Google Analytics</li>
+      <li><span class="ico">✓</span> 1 mes de soporte prioritario</li>
+    </ul>
+    <a href="index.html#contacto" class="btn">Consultar</a>
+  </div>
+
+</section>
+
+<!-- BADGE PAGO 50/50 -->
+<div class="pay-strip reveal-item">
+  <div class="pay-badges">
+    <div class="pay-badge">
+      <span class="pay-icon">🔒</span>
+      <div class="pay-text">
+        <span class="pay-title">50% para comenzar</span>
+        <span class="pay-desc">Señal al confirmar el proyecto</span>
+      </div>
+    </div>
+    <div class="pay-divider"></div>
+    <div class="pay-badge">
+      <span class="pay-icon">🚀</span>
+      <div class="pay-text">
+        <span class="pay-title">50% al entregar</span>
+        <span class="pay-desc">Saldo al lanzar tu proyecto</span>
+      </div>
+    </div>
+    <div class="pay-divider"></div>
+    <div class="pay-badge">
+      <span class="pay-icon">✅</span>
+      <div class="pay-text">
+        <span class="pay-title">Sin costos ocultos</span>
+        <span class="pay-desc">Presupuesto cerrado desde el inicio</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TABLA COMPARATIVA -->
+<section class="comparativa" id="comparativa">
+  <span class="hero-tag" style="display:block;text-align:center;margin-bottom:14px;opacity:1;transform:none">// Comparativa</span>
+  <h2 class="comp-title reveal-item">Elegí el plan ideal</h2>
+  <p class="comp-sub reveal-item">Todos los planes incluyen hosting y dominio el primer año.</p>
+
+  <div class="table-wrap reveal-item">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th class="feat-col">Característica</th>
+          <th>Landing</th>
+          <th class="th-popular">Web Multi</th>
+          <th>Web + Marca</th>
+          <th>Mini Tienda</th>
+          <th>Catálogo</th>
+          <th>360°</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="price-row">
+          <td class="feat-col">Precio</td>
+          <td>$190–290</td>
+          <td class="td-popular">$350–520</td>
+          <td>$620–890</td>
+          <td>$450–650</td>
+          <td>$650–950</td>
+          <td>$1.200–1.800</td>
+        </tr>
+        <tr>
+          <td class="feat-col">Hosting incluido</td>
+          <td><span class="yes">✓</span></td>
+          <td class="td-popular"><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="feat-col">Dominio 1er año</td>
+          <td><span class="yes">✓</span></td>
+          <td class="td-popular"><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="feat-col">Páginas / secciones</td>
+          <td>1</td>
+          <td class="td-popular">Hasta 5</td>
+          <td>Hasta 5</td>
+          <td>Multi</td>
+          <td>Multi</td>
+          <td>Multi</td>
+        </tr>
+        <tr>
+          <td class="feat-col">SEO optimizado</td>
+          <td>Básico</td>
+          <td class="td-popular">Completo</td>
+          <td>Completo</td>
+          <td>Básico</td>
+          <td>Básico</td>
+          <td>Avanzado</td>
+        </tr>
+        <tr>
+          <td class="feat-col">Diseño de logo</td>
+          <td><span class="no">—</span></td>
+          <td class="td-popular"><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="feat-col">Identidad de marca</td>
+          <td><span class="no">—</span></td>
+          <td class="td-popular"><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="feat-col">Carrito / tienda</td>
+          <td><span class="no">—</span></td>
+          <td class="td-popular"><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="feat-col">Catálogo de productos</td>
+          <td><span class="no">—</span></td>
+          <td class="td-popular"><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td>Hasta 20</td>
+          <td>Hasta 30</td>
+          <td>Hasta 30</td>
+        </tr>
+        <tr>
+          <td class="feat-col">Google Analytics</td>
+          <td><span class="no">—</span></td>
+          <td class="td-popular"><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="yes">✓</span></td>
+        </tr>
+        <tr>
+          <td class="feat-col">Soporte prioritario</td>
+          <td><span class="no">—</span></td>
+          <td class="td-popular"><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td><span class="no">—</span></td>
+          <td>1 mes</td>
+        </tr>
+        <tr class="cta-row">
+          <td class="feat-col"></td>
+          <td><a href="index.html#contacto" class="btn-sm">Elegir</a></td>
+          <td class="td-popular"><a href="index.html#contacto" class="btn-sm btn-sm-pop">Elegir</a></td>
+          <td><a href="index.html#contacto" class="btn-sm">Elegir</a></td>
+          <td><a href="index.html#contacto" class="btn-sm">Elegir</a></td>
+          <td><a href="index.html#contacto" class="btn-sm">Elegir</a></td>
+          <td><a href="index.html#contacto" class="btn-sm">Elegir</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+        <button id="myBtn" aria-label="Volver arriba">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+    <path d="M6 15L12 9L18 15" 
+          stroke="white" 
+          stroke-width="2" 
+          stroke-linecap="round" 
+          stroke-linejoin="round"/>
+  </svg>
+</button>
+
+  
+
+<!-- MANTENIMIENTO -->
+<section class="mantenimiento">
+  <h2>Mantenimiento & Soporte</h2>
+  <div class="maint-box">
+    <div class="maint-price">Desde USD 5 / mes</div>
+    <ul class="features">
+      <li><span class="ico">✓</span> Actualizaciones técnicas</li>
+      <li><span class="ico">✓</span> Copias de seguridad</li>
+      <li><span class="ico">✓</span> Monitoreo general</li>
+      <li><span class="ico">✓</span> Ajustes menores mensuales</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<footer>
+  <a href="index.html" class="nl" style="text-decoration:none;">
+    <svg width="34" height="27" viewBox="0 0 110 90">
+      <defs><linearGradient id="flg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#39FF14"/><stop offset="50%" stop-color="#20d4a8"/><stop offset="100%" stop-color="#00BFFF"/>
+      </linearGradient></defs>
+      <line x1="18" y1="16" x2="18" y2="74" stroke="#39FF14" stroke-width="4" stroke-linecap="round"/>
+      <line x1="18" y1="16" x2="92" y2="74" stroke="url(#flg)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="92" y1="16" x2="92" y2="74" stroke="#00BFFF" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="18" cy="10" r="8" fill="none" stroke="#39FF14" stroke-width="3"/>
+      <circle cx="18" cy="80" r="8" fill="none" stroke="#39FF14" stroke-width="3"/>
+      <circle cx="92" cy="10" r="8" fill="none" stroke="#00BFFF" stroke-width="3"/>
+      <circle cx="92" cy="80" r="8" fill="none" stroke="#00BFFF" stroke-width="3"/>
+      <circle cx="55" cy="45" r="5" fill="none" stroke="#20d4a8" stroke-width="2.5"/>
+    </svg>
+    <div>
+      <div class="nl-name">Node<span>Path</span></div>
+      <span class="nl-sub">Smart Digital Solutions</span>
+    </div>
+  </a>
+  <ul class="foot-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#portafolio">Portafolio</a></li>
+    <li><a href="#por-que">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+    <div class="foot-social">
+    <a href="https://www.instagram.com/nodepath/" class="soc" title="Instagram">📸</a>
+   
+  </div>
+
+  <div class="foot-seo" style="color: gray; font-size: smaller;">
+    Desarrollo web, CRM y software a medida para empresas en Uruguay,
+    Argentina y España. Creamos soluciones digitales modernas,
+    automatizaciones y plataformas que impulsan negocios.
+  </div>
+
+  <div class="foot-copy">© 2025 NodePath — Smart Digital Solutions</div>
+</footer>
+<script>
+/* ── NAV ── */
+const ham = document.getElementById("ham");
+const nm  = document.getElementById("nm");
+const nav = document.getElementById("nav");
+
+ham.addEventListener("click", () => {
+  nm.classList.toggle("open");
+  ham.classList.toggle("active");
+});
+document.querySelectorAll(".nm a").forEach(link => {
+  link.addEventListener("click", () => {
+    nm.classList.remove("open");
+    ham.classList.remove("active");
+  });
+});
+window.addEventListener("scroll", () => {
+  nav.classList.toggle("sc", window.scrollY > 30);
+});
+
+/* ── PARTICLES (canvas) ── */
+(function() {
+  const canvas = document.getElementById("particles");
+  const ctx    = canvas.getContext("2d");
+  let W, H, dots = [];
+
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  const COLORS = ["rgba(0,224,255,", "rgba(0,255,122,", "rgba(124,77,255,"];
+
+  for (let i = 0; i < 55; i++) {
+    dots.push({
+      x: Math.random() * 1920,
+      y: Math.random() * 1080,
+      r: Math.random() * 1.4 + 0.3,
+      vx: (Math.random() - .5) * 0.25,
+      vy: (Math.random() - .5) * 0.25,
+      c: COLORS[Math.floor(Math.random() * COLORS.length)],
+      a: Math.random() * 0.5 + 0.15
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    /* líneas entre puntos cercanos */
+    for (let i = 0; i < dots.length; i++) {
+      for (let j = i + 1; j < dots.length; j++) {
+        const dx = dots[i].x - dots[j].x;
+        const dy = dots[i].y - dots[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 160) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(0,220,255,${0.07 * (1 - dist/160)})`;
+          ctx.lineWidth = 0.6;
+          ctx.moveTo(dots[i].x, dots[i].y);
+          ctx.lineTo(dots[j].x, dots[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    /* puntos */
+    dots.forEach(d => {
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+      ctx.fillStyle = d.c + d.a + ")";
+      ctx.fill();
+
+      d.x += d.vx;
+      d.y += d.vy;
+      if (d.x < 0 || d.x > W) d.vx *= -1;
+      if (d.y < 0 || d.y > H) d.vy *= -1;
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── CURSOR GLOW ── */
+(function() {
+  const glow = document.getElementById("cursorGlow");
+  let mx = -300, my = -300, cx = -300, cy = -300;
+  window.addEventListener("mousemove", e => { mx = e.clientX; my = e.clientY; });
+  window.addEventListener("mouseleave", () => { mx = -300; my = -300; });
+  function tick() {
+    cx += (mx - cx) * 0.1;
+    cy += (my - cy) * 0.1;
+    glow.style.transform = `translate(${cx - 200}px, ${cy - 200}px)`;
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* ── COUNTER ANIMATION ── */
+function animateCount(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 1400;
+  const start = performance.now();
+  function step(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.floor(ease * target);
+    if (t < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  }
+  requestAnimationFrame(step);
+}
+
+/* ── SCROLL REVEAL ── */
+const revealCards = document.querySelectorAll(".card");
+const revealOther = document.querySelectorAll(".mantenimiento h2, .maint-box, .reveal-item, .table-wrap");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el    = entry.target;
+      const delay = el.dataset.delay ? parseInt(el.dataset.delay) * 120 : 0;
+      setTimeout(() => {
+        el.classList.add("visible");
+        /* disparar contadores si hay dentro */
+        el.querySelectorAll(".stat-num").forEach(animateCount);
+        if (el.classList.contains("stat-item")) {
+          const num = el.querySelector(".stat-num");
+          if (num) animateCount(num);
+        }
+      }, delay);
+      observer.unobserve(el);
+    }
+  });
+}, { threshold: 0.08 });
+
+revealCards.forEach(el => observer.observe(el));
+revealOther.forEach(el => observer.observe(el));
+</script>
+<script src="js/scroll.js"></script>
+
+</body>
+</html>
