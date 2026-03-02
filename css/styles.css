@@ -478,7 +478,7 @@ section { position:relative; z-index:2; }
 
 @media(max-width:768px){
   #portafolio{
-    padding:50px 18px;
+    padding:40px 18px;
   }
 }
 
@@ -488,7 +488,7 @@ section { position:relative; z-index:2; }
   display:flex; 
   align-items:flex-end; 
   justify-content:space-between; 
-  margin-bottom:52px; 
+  margin-bottom:40px; 
   flex-wrap:wrap; 
   gap:20px; 
 }
@@ -531,6 +531,8 @@ section { position:relative; z-index:2; }
 }
 
 /* ================= CARD ================= */
+
+
 
 .pi {
   position:relative;
@@ -657,6 +659,8 @@ section { position:relative; z-index:2; }
 .pi:hover .pi-rim { 
   transform:scaleX(1);
 }
+
+
 
 /* ================= INFO ================= */
 
@@ -2144,7 +2148,7 @@ footer {
 
 .c-title2:hover {
   background: linear-gradient(120deg, #72fafa, #e7f84a, #88d3ce, #6a11cb);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   transform: scale(1.05);
   display: inline-block; /* necesario para que funcione el scale */
@@ -2511,4 +2515,295 @@ footer {
   opacity: 0.7;
   text-align: center;
   line-height: 1.6;
+}
+
+
+
+/* ============================================================
+   SSIP FULL WIDTH SPLIT SLIDER
+============================================================ */
+
+/* ===============================
+   SSIP HEADER
+================================ */
+
+.ssip-header{
+  max-width:900px;
+  margin:0 auto 60px auto;
+  text-align:center;
+  padding:0 20px;
+}
+
+.ssip-kicker{
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#00ff7a;
+  display:block;
+  margin-bottom:18px;
+  opacity:.8;
+}
+
+.ssip-title{
+  font-size:34px;
+  margin-bottom:18px;
+
+  background:linear-gradient(90deg,#00ff7a,#00d4ff);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+
+.ssip-sub{
+  color:rgba(255,255,255,.7);
+  max-width:700px;
+  margin:auto;
+  line-height:1.6;
+  font-size:15px;
+}
+.ssip-full{
+  position:relative;
+  width:100vw;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:40px;
+  overflow:hidden;
+}
+
+.ssip-wrapper{
+  position:relative;
+  height:65vh;
+  min-height:520px;
+  overflow:hidden;
+  border-radius:18px;
+
+  border:1px solid rgba(0,255,122,.25);
+  box-shadow:
+    0 0 0 1px rgba(0,255,122,.08),
+    0 20px 60px rgba(0,0,0,.6),
+    0 0 40px rgba(0,255,122,.08);
+}
+
+
+.ssip-slider{
+  display:flex;
+  height:100%;
+  transition:transform .8s cubic-bezier(.77,0,.18,1);
+}
+
+/* ===========================
+   SLIDE
+=========================== */
+
+.ssip-slide{
+  min-width:100%;
+  display:flex;
+  height:100%;
+}
+
+/* ===========================
+   IMAGE 60%
+=========================== */
+
+.ssip-media{
+  width:60%;
+  overflow:hidden;
+}
+
+.ssip-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 1.2s ease;
+}
+
+.ssip-slide:hover .ssip-media img{
+  transform:scale(1.05);
+}
+
+/* ===========================
+   INFO 40%
+=========================== */
+
+.ssip-info{
+  width:40%;
+  display:flex;
+  align-items:center;
+  padding:60px;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(0,255,122,.08), transparent 60%),
+    linear-gradient(180deg,#0c0f14,#0a0d11);
+}
+
+.ssip-inner{
+  max-width:420px;
+}
+
+/* ===========================
+   TYPO STYLE
+=========================== */
+
+.ssip-tag{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#00ff7a;
+  display:block;
+  margin-bottom:18px;
+}
+
+.ssip-info h3{
+  font-size:30px;
+  margin-bottom:18px;
+  background:linear-gradient(90deg,#00ff7a,#00d4ff);
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+}
+
+.ssip-info p{
+  color:rgba(255,255,255,.75);
+  line-height:1.7;
+  font-size:15px;
+}
+
+/* ===========================
+   NAV
+=========================== */
+
+.ssip-nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,255,122,.15);
+  border:1px solid rgba(0,255,122,.4);
+  color:#00ff7a;
+  font-size:24px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:.3s;
+  z-index:5;
+}
+
+.ssip-nav:hover{
+  background:rgba(0,255,122,.35);
+}
+
+.prev{ left:40px; }
+.next{ right:40px; }
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+  .ssip-wrapper{
+    height:60vh;
+  }
+
+  .ssip-slide{
+    flex-direction:column;
+  }
+
+  .ssip-media{
+    width:100%;
+    height:55%;
+  }
+
+  .ssip-info{
+    width:100%;
+    height:45%;
+    padding:30px 25px;
+  }
+
+  .ssip-nav{
+    display:none;
+  }
+}
+
+/* Animación base imagen */
+.ssip-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform 6s ease; /* lento y elegante */
+}
+
+/* Solo el slide activo hace zoom */
+.ssip-slide.active .ssip-media img{
+  transform:scale(1.08);
+}
+/* ===============================
+   RESPONSIVE SSIP
+================================ */
+
+@media (max-width: 1024px){
+
+  .ssip-title{
+    font-size:28px;
+  }
+
+  .ssip-sub{
+    font-size:14px;
+  }
+
+}
+
+@media (max-width: 768px){
+
+  .ssip-header{
+    margin-bottom:35px;
+  }
+
+  .ssip-title{
+    font-size:22px;
+    line-height:1.3;
+  }
+
+  .ssip-sub{
+    font-size:13px;
+    line-height:1.5;
+    padding:0 10px;
+  }
+
+  .ssip-kicker{
+    font-size:10px;
+    letter-spacing:2px;
+  }
+
+}
+@media (max-width: 768px){
+
+  .ssip-slide{
+    flex-direction:column;
+  }
+
+  .ssip-media,
+  .ssip-info{
+    width:100%;
+  }
+
+  .ssip-media img{
+    height:240px;
+    object-fit:cover;
+  }
+
+  .ssip-info{
+    padding:30px 20px;
+  }
+
+  .ssip-info h3{
+    font-size:18px;
+  }
+
+  .ssip-info p{
+    font-size:13px;
+  }
+
 }
