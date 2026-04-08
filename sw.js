@@ -3,8 +3,8 @@
 // Estrategia: Network First para HTML, Cache First para assets
 // ================================================================
 
-const CACHE_NAME    = "nodepath-cache-v5"; // ← subir versión al deployar
-const CACHE_STATIC  = "nodepath-static-v5";
+const CACHE_NAME    = "nodepath-cache-v6"; // ← subir versión al deployar
+const CACHE_STATIC  = "nodepath-static-v6";
 
 // Assets que se pre-cachean al instalar
 const PRECACHE_URLS = [
