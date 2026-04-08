@@ -163,18 +163,6 @@
 </script>
 
 <style>
-  /*
-   * STACK CARDS — ANIMACIONES 100% COMPUESTAS (GPU only)
-   *
-   * El reporte de Lighthouse detectó que morphBorder (border-radius)
-   * y auroraTint (background-position-x) NO son compuestas:
-   * provocan layout + paint en cada frame → jank visible.
-   *
-   * Solución: SOLO transform y opacity en @keyframes.
-   * El efecto de "borde vivo" se logra con un ::before que rota/escala.
-   * El efecto aurora se logra con un overlay que hace opacity pulse.
-   * El border-radius queda ESTÁTICO (un valor bonito, no animado).
-   */
 
   @keyframes cardShimmer {
     /* Solo opacity — GPU composited, zero layout cost */
@@ -806,11 +794,7 @@
     <div id="port" class="pi reveal d3">
       <div class="pi-browser"><div class="bd"></div><div class="bd"></div><div class="bd"></div><div class="pi-url">Web Emprendedores</div></div>
       <div class="pi-screen">
-        <!--
-          CRÍTICO: Esta imagen era 1.37MB (1536×962).
-          Con srcset + optimización debería bajar a ~60KB en mobile.
-          Ejecutar optimize-images.sh primero.
-        -->
+       
         <img src="/assets/landginemprende.webp"
              srcset="/assets/landginemprende-400w.webp 400w, /assets/landginemprende-800w.webp 800w"
              sizes="(max-width: 768px) 400px, 800px"
