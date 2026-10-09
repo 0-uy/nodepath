@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-
-# Bloquear archivos innecesarios para el crawler
-Disallow: /js/
-Disallow: /css/
-
-# Sitemap
-Sitemap: https://nodepathstudio.com/sitemap.xml
